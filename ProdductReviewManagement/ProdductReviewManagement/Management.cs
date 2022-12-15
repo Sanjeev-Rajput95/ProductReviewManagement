@@ -12,13 +12,19 @@ namespace ProdductReviewManagement
     {
         public readonly DataTable dataTable = new DataTable();
 
-        public void TopRecords(List<ProductReview> review)
+        public void TopThreeRecords(List<ProductReview> review)
         {
             var recordeData = (from productReviews in review
                                orderby productReviews.Rating descending
                                select productReviews).Take(3);
 
-            Console.WriteLine($"topReview : {JsonConvert.SerializeObject(recordeData)}");
+            // Console.WriteLine($"topReview : {JsonConvert.SerializeObject(recordeData)}");
+
+
+            foreach (ProductReview product in recordeData)
+            {
+                Console.WriteLine("ProductID : " + product.ProductID + " UserID : " + product.UserID + " Rating : " + product.Rating + " Review : " + product.Review + " IsLike : " + product.isLike + "\n");
+            }
         }
          
 }
