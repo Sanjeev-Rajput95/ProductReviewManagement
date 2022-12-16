@@ -57,5 +57,16 @@ namespace ProdductReviewManagement
                 Console.WriteLine("\n" + " ProductId : {0}" + "\t" + " Review : {1} ", record.productID, record.review);
             }
         }
+        // UC6--Skip top 5 records
+
+        public void Skiptop5DataFromList(List<ProductReview> list)
+        {
+            Console.WriteLine("\n ------Skip the Top 5 records display remaining records-----");
+            List<ProductReview>afterSkipRecords = list.Skip(5).ToList();
+            foreach (var record in afterSkipRecords)
+            {
+                Console.WriteLine("\n" + "ProductID : " + record.ProductID + " UserID : " + record.UserID + " Rating : " + record.Rating + " Review : " + record.Review + " isLike : " + record.isLike);
+            }
+        }
     }
 }
