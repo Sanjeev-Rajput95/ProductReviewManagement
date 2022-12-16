@@ -30,11 +30,21 @@ namespace ProdductReviewManagement
         public void SelectedRecords(List<ProductReview> reviews)
         {
             var records = (from productReviews in reviews where productReviews.Rating > 3 && (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9) select productReviews);
-            
-            foreach(ProductReview productReview in records)
+
+            foreach (ProductReview productReview in records)
             {
                 Console.WriteLine("ProductID : " + productReview.ProductID + " UserID : " + productReview.UserID + " Rating : " + productReview.Rating + " Review : " + productReview.Review + " isLike : " + productReview.isLike);
             }
         }
+        // UC4--Retrieve Count of records
+        public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+
+            foreach(var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + "------" + list.Count);
+            }
+        }        
     }
 }
