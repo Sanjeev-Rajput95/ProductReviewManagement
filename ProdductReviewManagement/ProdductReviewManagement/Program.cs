@@ -48,6 +48,9 @@
 
             //UC6--Skip top 5 records and display remaining
             objManage.Skiptop5DataFromList(productReviews);
+
+            //UC7
+            objManage.RetrieveProductID_And_Review(productReviews);
         }
     }
 }
