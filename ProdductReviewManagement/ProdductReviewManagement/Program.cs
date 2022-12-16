@@ -41,7 +41,10 @@
             //objManage.SelectedRecords(productReviews);
 
             // UC4
-            objManage.RetrieveCountOfRecords(productReviews);
+           // objManage.RetrieveCountOfRecords(productReviews);
+
+            //UC5--Retriving productId and review
+            objManage.RetrieveProductID_And_Review(productReviews);
         }
     }
 }
