@@ -9,7 +9,7 @@
             // UC1 Create Product reviews mangement
             List<ProductReview> productReviews = new List<ProductReview>()
             {
-                new ProductReview() { ProductID = 1, UserID = 1, Rating = 2, Review = "Good", isLike = true },
+                new ProductReview() { ProductID = 1, UserID = 1, Rating = 3.5, Review = "Good", isLike = true },
                 new ProductReview() { ProductID = 2, UserID = 1, Rating = 4, Review = "Good", isLike = true },
                 new ProductReview() { ProductID = 3, UserID = 2, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview() { ProductID = 4, UserID = 2, Rating = 10, Review = "Good", isLike = true },
@@ -36,6 +36,9 @@
             // Retrieve top 3 records from list
             Management objManage = new Management();
             objManage.TopThreeRecords(productReviews);
+
+            // UC3 Retrieve records Rating > 3 & ProductID 1 or 4 or 9
+            objManage.SelectedRecords(productReviews);
         }
     }
 }
